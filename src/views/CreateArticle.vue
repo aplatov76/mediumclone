@@ -1,5 +1,5 @@
 <template>
-  <mcv-create-article
+  <mcv-article-form
     :initial-values="initialValues"
     :errors="validationErrors"
     :is-submitting="isSubmitting"
@@ -8,12 +8,21 @@
 </template>
 
 <script>
+import McvArticleForm from "@/components/ArticleForm";
+
 export default {
   name: "McvCreateArticle",
-  components: {},
+  components: {
+    McvArticleForm,
+  },
   data() {
     return {
-      initialValues: {},
+      initialValues: {
+        title: "",
+        description: "",
+        body: "",
+        tagList: [],
+      },
       validationErrors: null,
       isSubmitting: false,
     };
