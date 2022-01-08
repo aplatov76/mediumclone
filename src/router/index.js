@@ -6,6 +6,7 @@ import YourFeed from "@/views/YourFeed.vue";
 import TagFeed from "@/views/TagFeed.vue";
 import Article from "@/views/Article.vue";
 import CreateArticle from "@/views/CreateArticle.vue";
+import UpdateArticle from "@/views/UpdateArticle.vue";
 //import
 
 const routes = [
@@ -27,11 +28,6 @@ const routes = [
   {
     path: "/userprofile",
     name: "userProfile",
-    component: Login,
-  },
-  {
-    path: "/article",
-    name: "article",
     component: Login,
   },
   {
@@ -57,7 +53,7 @@ const routes = [
   {
     path: "/articles/:slug/edit",
     name: "editArticle",
-    component: GlobalFeed,
+    component: UpdateArticle,
   },
   {
     path: "/settings",

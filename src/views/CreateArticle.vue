@@ -9,6 +9,8 @@
 
 <script>
 import McvArticleForm from "@/components/ArticleForm";
+import { actionTypes } from "@/store/modules/createArticle";
+import { mapState } from "vuex";
 
 export default {
   name: "McvCreateArticle",
@@ -23,13 +25,23 @@ export default {
         body: "",
         tagList: [],
       },
-      validationErrors: null,
-      isSubmitting: false,
     };
   },
+  computed: {
+    ...mapState({
+      isSubmitting: (state) => state.createArticle.isSubmitting,
+      validationErrors: (state) => state.createArticle.validationErrors,
+    }),
+  },
   methods: {
-    onSubmit(data) {
-      console.log("on Submit data: ", data);
+    onSubmit(articleInput) {
+      this.$store
+        .dispatch(actionTypes.createArticle, {
+          articleInput,
+        })
+        .then((article) =>
+          this.$router.push({ name: "article", params: { slug: article.slug } })
+        );
     },
   },
 };

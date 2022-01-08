@@ -82,10 +82,10 @@ export default {
   },
   data() {
     return {
-      title: "",
-      description: "",
-      body: "",
-      tagList: "",
+      title: this.initialValues.title,
+      description: this.initialValues.description,
+      body: this.initialValues.body,
+      tagList: this.initialValues.tagList.join(" "),
     };
   },
   methods: {
@@ -94,7 +94,7 @@ export default {
         title: this.title,
         description: this.description,
         body: this.body,
-        tagList: this.tagList,
+        tagList: this.tagList.trim().split(" "),
       };
 
       this.$emit("articleSubmit", form);
