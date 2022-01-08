@@ -22,7 +22,7 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" :to="{ name: 'home' }">
+            <router-link class="nav-link" :to="{ name: 'settings' }">
               <i class="ion-gear-a"></i> &nbsp; Settings
             </router-link>
           </li>
