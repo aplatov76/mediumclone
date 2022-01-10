@@ -9,6 +9,7 @@ import CreateArticle from "@/views/CreateArticle.vue";
 import UpdateArticle from "@/views/UpdateArticle.vue";
 import Settings from "@/views/Settings.vue";
 //import
+import Foo from "@/views/Foo.vue";
 
 const routes = [
   {
@@ -70,6 +71,11 @@ const routes = [
     path: "/profiles/:slug/favorites",
     name: "userProfileFavorites",
     component: GlobalFeed,
+  },
+  {
+    path: "/profiles/foo",
+    name: "foo",
+    component: Foo,
   },
 ];
 

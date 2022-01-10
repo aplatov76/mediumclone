@@ -7,6 +7,8 @@ import createArticle from "@/store/modules/createArticle";
 import updateArticle from "@/store/modules/updateArticle";
 import settings from "@/store/modules/settings";
 
+import foo from "@/store/modules/foo";
+
 export default createStore({
   state: {},
   mutations: {},
@@ -19,5 +21,6 @@ export default createStore({
     createArticle,
     updateArticle,
     settings,
+    foo,
   },
 });
